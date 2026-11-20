@@ -1,0 +1,21 @@
+name: csmm_p3p4_135_ep50
+model: configs/train/yolov8s_csmm_p3p4.yaml
+train_json: annotations/train_s10.json
+val_json: annotations/val.json
+val_stride: 30
+empty_fraction: 0.2
+epochs: 50
+imgsz: 1280
+batch: 32
+close_mosaic: 5
+seed: 0
+train_args:
+  optimizer: AdamW
+  lr0: 0.001
+  momentum: 0.9
+  weight_decay: 0.01
+  warmup_bias_lr: 0.0
+  save_period: 1
+eval:
+  tracker: bytetrack.yaml
+  conf: 0.1
